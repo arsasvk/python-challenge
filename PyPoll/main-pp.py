@@ -14,9 +14,8 @@ with open(csvpath, newline='') as csvfile:
 	for row in csvreader:
 		# Calculate total number of votes
 		total_votes = total_votes + 1
-		# List of candidates who received votes
 		name = row[2]
-	
+		# Calculating list of candidates and their votes
 		if name in candidate:
 			candidate[name] = candidate[name] + 1
 		else:
@@ -34,8 +33,11 @@ Total Votes: {}
 		file.write(result)
 		max_votes = 0
 		Winner = ""
+
 		for name,votes in candidate.items():
+			#Percentage of votes each candidate won
 			percent_votes = votes*100/total_votes
+			#Predicting the winner candidate
 			if votes > max_votes:
 				max_votes = votes
 				Winner = name
@@ -47,6 +49,7 @@ Total Votes: {}
 Winner: {}
 _______________________________""".format(Winner)
 
+		#Writing the election results in a .txt file
 		file.write(result)
 
 		print(result)

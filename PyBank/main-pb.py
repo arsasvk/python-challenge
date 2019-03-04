@@ -58,5 +58,6 @@ Greatest Decrease in Profits: {} (${})""".format(
 	total_row, net_total_amount, round(average_change, 2), max_increase_month,
 	 max_increase, max_decrease_month, max_decrease)
 
+		# Writing the financial analysis in a .txt file
 		file.write(result)
 		print(result)
